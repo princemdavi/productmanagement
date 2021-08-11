@@ -7,7 +7,7 @@ require_once("./dbconnect.php");
 if(isset($_POST['register'])){
 
     $name = trim($_POST['name']);
-    $username = trim($_POST['username']);
+    $userName = trim($_POST['username']);
     $password = trim($_POST['password']);
 
     //! Error handling
@@ -23,11 +23,11 @@ if(isset($_POST['register'])){
         }
     }
 
-    if(empty($username)){
+    if(empty($userName)){
         $errors['username'] = "This field is required";
     }else{
 
-        if(strlen($username) < 3){
+        if(strlen($userName) < 3){
             $errors['username'] = "A username must have atleast 3 characters";
         }
     }
@@ -48,7 +48,7 @@ if(isset($_POST['register'])){
     if(!array_filter($errors)){
         
         $select = $pdo->prepare("SELECT * FROM admins WHERE username=:username");
-        $select->bindParam(':username', $username);
+        $select->bindParam(':username', $userName);
         $select->execute();
 
         if($select->rowCount()){
@@ -58,7 +58,7 @@ if(isset($_POST['register'])){
             $hashedPass = password_hash($password, PASSWORD_DEFAULT);
             $insert = $pdo->prepare("INSERT INTO admins (name, username, password) VALUES (:name, :username, :password)");
             $insert->bindParam(':name', $name);
-            $insert->bindParam(':username', $username);
+            $insert->bindParam(':username', $userName);
             $insert->bindParam(':password', $hashedPass);
             $insert->execute(); 
 
@@ -88,7 +88,7 @@ if(isset($_POST['register'])){
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="" class="form-control" value="<?php echo htmlspecialchars(@$username) ?>">
+            <input type="text" name="username" id="" class="form-control" value="<?php echo htmlspecialchars(@$userName) ?>">
             <div class="error"><?php echo @$errors['username'] ?></div>
         </div>
         <div class="form-group">
