@@ -59,6 +59,7 @@ section:first-of-type .header {
   max-width: 500px;
   margin-inline: auto;
   padding-block: 2rem;
+  padding: 2rem 0;
 }
 
 .about > p {
