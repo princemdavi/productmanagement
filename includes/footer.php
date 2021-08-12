@@ -14,6 +14,8 @@
         var current = window.location.pathname.split('/')
         current = current[current.length - 1]
 
+        console.log(window.location)
+
         anchors.forEach(anchor => {
 
             var anchor_path = anchor.href.split("/");

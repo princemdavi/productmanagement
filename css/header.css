@@ -65,12 +65,14 @@ header .wrapper nav ul li + * {
     font-size: .6rem;
     padding-block: .5rem;
     padding: .5rem 0;
+    font-weight: bold;
   }
   header .wrapper li {
     padding-bottom: 1rem;
   }
   header .wrapper li a {
     font-size: .6rem;
+    font-weight: bold;
   }
 }
 
