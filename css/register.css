@@ -1,0 +1,44 @@
+.container-register {
+  min-height: calc(100vh - 150px);
+}
+
+.container-register form {
+  width: 90%;
+  max-width: 400px;
+  margin-inline: auto;
+  padding-block: 10vh;
+}
+
+.container-register form .header {
+  margin-bottom: 1rem;
+}
+
+.container-register form .form-group {
+  margin-bottom: .5rem;
+}
+
+.container-register form .form-control {
+  width: 100%;
+  margin-top: .2rem;
+  outline: none;
+  border: 2px solid yellowgreen;
+  border-radius: 3px;
+  padding: .7rem;
+}
+
+.container-register form .btn {
+  width: 100%;
+  background-color: yellowgreen;
+  outline: none;
+  border: 1px solid yellowgreen;
+  color: whitesmoke;
+  cursor: pointer;
+  padding-block: .5rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 280px) {
+  .container-register form .header {
+    text-align: center;
+  }
+}

@@ -63,7 +63,7 @@ if(isset($_POST['register'])){
             $insert->execute(); 
 
             if($insert->rowCount()){
-                header("Location: ./login.php");
+                header("Location: login");
             }else{
                 $error = "Something went wrong";
             }
@@ -74,7 +74,7 @@ if(isset($_POST['register'])){
 ?>
 
     
-<div class="container">
+<div class="container-register">
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 
         <div class="header">
@@ -101,9 +101,5 @@ if(isset($_POST['register'])){
         <div><?php echo @$error ?></div>
     </form>
 </div>
-
-<script>
-
-</script>
 
 <?php include("./includes/footer.php") ?>

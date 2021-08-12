@@ -1,0 +1,88 @@
+header {
+  background-color: black;
+}
+
+header .wrapper {
+  width: 90%;
+  min-height: 80px;
+  margin-inline: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: whitesmoke;
+}
+
+header .wrapper a {
+  text-decoration: none;
+}
+
+header .wrapper .header {
+  color: yellowgreen;
+}
+
+header .wrapper .header a {
+  color: inherit;
+}
+
+header .wrapper nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .wrapper nav ul a {
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+
+header .wrapper nav ul a:hover {
+  color: yellowgreen;
+}
+
+header .wrapper nav ul li + * {
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  header .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .wrapper .header {
+    font-size: .6rem;
+    padding-block: .5rem;
+  }
+  header .wrapper li {
+    padding-bottom: 1rem;
+  }
+  header .wrapper li a {
+    font-size: .6rem;
+  }
+}
+
+@media (max-width: 280px) {
+  header .wrapper nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .wrapper nav ul li {
+    margin: 0;
+  }
+}

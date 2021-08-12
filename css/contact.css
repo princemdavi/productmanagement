@@ -1,0 +1,44 @@
+.container-contact {
+  min-height: calc(100vh - 150px);
+}
+
+.container-contact form {
+  width: 90%;
+  max-width: 400px;
+  margin-inline: auto;
+  padding-block: 10vh;
+}
+
+.container-contact form .header {
+  margin-bottom: 1rem;
+}
+
+.container-contact form .form-group {
+  margin-bottom: .5rem;
+}
+
+.container-contact form .form-control {
+  width: 100%;
+  margin-top: .2rem;
+  outline: none;
+  border: 2px solid yellowgreen;
+  border-radius: 3px;
+  padding: .7rem;
+}
+
+.container-contact form .btn {
+  width: 100%;
+  background-color: yellowgreen;
+  outline: none;
+  border: 1px solid yellowgreen;
+  color: whitesmoke;
+  cursor: pointer;
+  padding-block: .5rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 280px) {
+  .container-contact form .header {
+    text-align: center;
+  }
+}

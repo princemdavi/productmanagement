@@ -1,7 +1,7 @@
 <?php include("./includes/header.php") ?>
 
 
-<div class="container">
+<div class="container-contact">
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
     <h1 class="header">Send us an email</h1>
 
