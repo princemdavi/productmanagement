@@ -58,6 +58,7 @@ section:first-of-type .header {
   width: 90%;
   max-width: 500px;
   margin-inline: auto;
+  margin: 0 auto;
   padding-block: 2rem;
   padding: 2rem 0;
 }
