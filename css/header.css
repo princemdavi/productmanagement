@@ -63,6 +63,7 @@ header .wrapper nav ul li + * {
   header .wrapper .header {
     font-size: .6rem;
     padding-block: .5rem;
+    padding: .5rem 0;
   }
   header .wrapper li {
     padding-bottom: 1rem;
