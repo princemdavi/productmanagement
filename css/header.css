@@ -6,6 +6,7 @@ header .wrapper {
   width: 90%;
   min-height: 80px;
   margin-inline: auto;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
