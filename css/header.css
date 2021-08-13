@@ -1,12 +1,15 @@
 header {
   background-color: black;
+  min-height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-header .wrapper {
-  width: 90%;
-  min-height: 80px;
-  margin-inline: auto;
-  margin: 0 auto;
+header .container-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,40 +22,40 @@ header .wrapper {
   color: whitesmoke;
 }
 
-header .wrapper a {
+header .container-nav a {
   text-decoration: none;
 }
 
-header .wrapper .header {
+header .container-nav .header {
   color: yellowgreen;
 }
 
-header .wrapper .header a {
+header .container-nav .header a {
   color: inherit;
 }
 
-header .wrapper nav ul {
+header .container-nav nav ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header .wrapper nav ul a {
+header .container-nav nav ul a {
   color: whitesmoke;
   text-transform: uppercase;
 }
 
-header .wrapper nav ul a:hover {
+header .container-nav nav ul a:hover {
   color: yellowgreen;
 }
 
-header .wrapper nav ul li + * {
+header .container-nav nav ul li + * {
   margin-left: 1rem;
 }
 
 @media (max-width: 768px) {
-  header .wrapper {
+  header .container-nav {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -61,23 +64,27 @@ header .wrapper nav ul li + * {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  header .wrapper .header {
+  header .container-nav .header {
     font-size: .6rem;
     padding-block: .5rem;
-    padding: .5rem 0;
+    padding: 1rem 0;
     font-weight: bold;
   }
-  header .wrapper li {
-    padding-bottom: 1rem;
+  header .container-nav li {
+    padding-bottom: 2rem;
   }
-  header .wrapper li a {
+  header .container-nav li a {
     font-size: .6rem;
     font-weight: bold;
   }
 }
 
 @media (max-width: 280px) {
-  header .wrapper nav ul {
+  header .container-nav .header h1 {
+    font-size: 1.125rem;
+    padding-bottom: unset;
+  }
+  header .container-nav nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -86,7 +93,12 @@ header .wrapper nav ul li + * {
         -ms-flex-align: center;
             align-items: center;
   }
-  header .wrapper nav ul li {
+  header .container-nav nav ul li {
     margin: 0;
+    margin-bottom: .75rem;
+    padding-bottom: unset;
+  }
+  header .container-nav nav ul li a {
+    font-size: .70rem;
   }
 }

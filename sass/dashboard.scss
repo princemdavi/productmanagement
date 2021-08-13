@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1{
+    font-size: 1.5rem;
+}
+
+
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: .75rem;
+}
+
+@media (max-width: 480px){
+
+    h1{
+        font-size: 1rem;
+    }
+
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color: black;
+    color: yellowgreen;
+    margin-bottom: 1rem;
+
+    .btn-logout{
+        cursor: pointer;
+        border: none;
+        background-color: yellowgreen;
+        color: whitesmoke;
+        padding: .3em;
+        height: 24px;
+        border-radius: 3px;
+    }
+
+    .container-nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+.container{
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+
+.table-wrapper{
+
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+
+    .add__product{
+        border: none;
+        background-color: yellowgreen;
+        color: whitesmoke;
+        padding: .3rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        font-size: .75rem;
+    }
+
+}
+
+.table{
+
+    border-collapse: collapse;
+    width: 600px;
+    max-width: 700px;
+    margin: auto;
+
+    button{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    th{
+        padding: .5rem;
+    }
+
+    td{
+        padding: .5rem;
+    }
+
+
+    thead{
+        background-color: #000;
+        color: #FFF;
+    }
+
+}
+
+.form-wrapper{
+    max-width: 400px;
+    margin: 1rem auto;
+
+    h1{
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .form-group, .form-label{
+        display: block;
+        margin-bottom: .5rem;
+    }
+
+    .form-label{
+        font-weight: 700;
+    }
+    .form-control{
+        width: 100%;
+        outline: none;
+        padding: .5rem 1rem;
+        border: 2px solid yellowgreen;
+        border-radius: 4px;
+    }
+
+    .btn-edit{
+        font-size: 1rem;
+        border: none;
+        background-color: yellowgreen;
+        padding: .5rem;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:hover{
+            color: green;
+        }
+    }
+
+    .btn-cancel{
+        background-color: rgb(199, 26, 26);
+        color: whitesmoke;
+    }
+
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+}

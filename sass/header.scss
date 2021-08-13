@@ -1,11 +1,10 @@
 header{
     background-color: black;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
     
-    .wrapper{
-        width: 90%;
-        min-height: 80px;
-        margin-inline: auto;
-        margin: 0 auto;
+    .container-nav{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -54,11 +53,11 @@ header{
                 .header{
                     font-size: .6rem;
                     padding-block: .5rem;
-                    padding:.5rem 0;
+                    padding:1rem 0;
                     font-weight: bold;
                 }
                 li{
-                    padding-bottom: 1rem;
+                    padding-bottom: 2rem;
     
                     a{
                         font-size: .6rem;
@@ -70,6 +69,12 @@ header{
     
         @media (max-width: 280px){
             &{
+                .header{
+                    h1{
+                        font-size: 1.125rem;
+                        padding-bottom: unset;
+                    }
+                }                
                 nav{
                     ul{
                         flex-direction: column;
@@ -77,6 +82,12 @@ header{
         
                         li {
                             margin: 0;
+                            margin-bottom: .75rem;
+                            padding-bottom: unset;
+
+                            a{
+                                font-size: .70rem;
+                            }
                         }
                     }
                 }

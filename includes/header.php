@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <div class="wrapper">
+        <div class="container container-nav">
             <div class="header">
                 <a href="./index.php">
                     <h1>Product management</h1>

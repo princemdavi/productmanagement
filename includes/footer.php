@@ -1,6 +1,6 @@
 <footer>
-    <div>
-        <h1>&copy; copyright 2021</h1>
+    <div class="footer">
+        <h3>&copy; copyright 2021</h3>
     </div>
 </footer>
 <script>
@@ -14,14 +14,10 @@
         var current = window.location.pathname.split('/')
         current = current[current.length - 1]
 
-        console.log(window.location)
-
         anchors.forEach(anchor => {
 
             var anchor_path = anchor.href.split("/");
             anchor_path = anchor_path[anchor_path.length - 1]
-
-            console.log(current)
             
             if( anchor_path == current){
                anchor.className = "active"

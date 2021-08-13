@@ -3,6 +3,13 @@
 include("./includes/header.php");
 require_once("./dbconnect.php");
 
+session_start();
+
+if(!empty(@$_SESSION['name'] && @$_SESSION['managerId'])){
+    header("Location: dashboard");
+}
+
+
 
 if(isset($_POST['register'])){
 
@@ -47,7 +54,7 @@ if(isset($_POST['register'])){
 
     if(!array_filter($errors)){
         
-        $select = $pdo->prepare("SELECT * FROM admins WHERE username=:username");
+        $select = $pdo->prepare("SELECT * FROM managers WHERE username=:username");
         $select->bindParam(':username', $userName);
         $select->execute();
 
@@ -56,7 +63,7 @@ if(isset($_POST['register'])){
         }else{
 
             $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-            $insert = $pdo->prepare("INSERT INTO admins (name, username, password) VALUES (:name, :username, :password)");
+            $insert = $pdo->prepare("INSERT INTO managers (name, username, password) VALUES (:name, :username, :password)");
             $insert->bindParam(':name', $name);
             $insert->bindParam(':username', $userName);
             $insert->bindParam(':password', $hashedPass);

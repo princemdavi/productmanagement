@@ -9,6 +9,9 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
+RewriteRule ^api/users api/users.php
+RewriteRule ^api/products api/products.php
+
 #remove php file extension from all php files
 
 RewriteRule ^([^\.]+)$ $1.php [L]

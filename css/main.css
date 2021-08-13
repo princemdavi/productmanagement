@@ -8,7 +8,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: .85rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,6 +22,7 @@ body {
 
 h1 {
   font-weight: 400;
+  font-size: 1.5rem;
 }
 
 p {
@@ -32,26 +34,10 @@ p {
   font-size: .8rem;
 }
 
-section {
-  min-height: calc(100vh - 150px);
-  padding: 2rem 3rem;
-}
-
-section:first-of-type {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-section:first-of-type .header {
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
+.container {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 .about {
@@ -65,7 +51,7 @@ section:first-of-type .header {
 
 .about > p {
   text-align: justify;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .about .header {
