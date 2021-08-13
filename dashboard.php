@@ -10,7 +10,7 @@ if(empty($_SESSION['name'] || $_SESSION['managerId'])){
 $name = $_SESSION['name'];
 $managerId = $_SESSION['managerId'];
 
-$stmt = $pdo->prepare("SELECT * FROM products WHERE managerId = :managerId");
+$stmt = $pdo->prepare("SELECT * FROM products WHERE managerId = :managerId ORDER BY createdAt DESC");
 $stmt->bindParam(':managerId', $managerId);
 $stmt->execute();;
 

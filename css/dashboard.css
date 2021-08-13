@@ -76,6 +76,10 @@ header .container-nav {
   overflow-x: auto;
 }
 
+.table-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 .table-wrapper .add__product {
   border: none;
   background-color: yellowgreen;

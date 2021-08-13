@@ -36,6 +36,22 @@ p{
     width: 90%;
     max-width: 1250px;
     margin: 0 auto;
+
+    .content{
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 5vh;
+
+        .header{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        p{
+            text-align: center;
+            line-height: 1.5;
+        }
+    }
 }
 
 .about{
