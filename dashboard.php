@@ -112,40 +112,51 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($products as $product): ?>
+                        <?php if(count($products) > 0): ?>
+
+                            <?php foreach($products as $product): ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $no++; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $product['productName']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $product['productQuantity']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $product['productPrice']; ?>
+                                    </td>
+                                    <td>
+    
+                                        <button 
+    
+                                            data-product_id="<?php echo $product['id']; ?>" 
+                                            data-product_name="<?php echo $product['productName']; ?>" 
+                                            data-product_quantity="<?php echo $product['productQuantity']; ?>" 
+                                            data-product_price="<?php echo $product['productPrice']; ?>"
+                                            onclick="editProduct(this)" class="btn-edit">Edit
+    
+                                        </button>
+    
+                                    </td>
+                                    <td>
+                                        <form action="" method="post" onsubmit="return deleteProduct()">
+                                            <button type="submit" value="<?php echo $product['id']; ?>" name="delete" >Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+
+                        <?php else: ?>
                             <tr>
-                                <td>
-                                    <?php echo $no++; ?>
-                                </td>
-                                <td>
-                                    <?php echo $product['productName']; ?>
-                                </td>
-                                <td>
-                                    <?php echo $product['productQuantity']; ?>
-                                </td>
-                                <td>
-                                    <?php echo $product['productPrice']; ?>
-                                </td>
-                                <td>
-
-                                    <button 
-
-                                        data-product_id="<?php echo $product['id']; ?>" 
-                                        data-product_name="<?php echo $product['productName']; ?>" 
-                                        data-product_quantity="<?php echo $product['productQuantity']; ?>" 
-                                        data-product_price="<?php echo $product['productPrice']; ?>"
-                                        onclick="editProduct(this)" class="btn-edit">Edit
-
-                                    </button>
-
-                                </td>
-                                <td>
-                                    <form action="" method="post" onsubmit="return deleteProduct()">
-                                        <button type="submit" value="<?php echo $product['id']; ?>" name="delete" >Delete</button>
-                                    </form>
+                                <td colspan="6" style="text-align: center; font-weight: bolder; font-size: .75rem; color: green">
+                                    <p style="margin-bottom: 1rem;">You don't have any products to manage</p>
+                                    <p>You can add new products to manage using the add new product button above</p>
                                 </td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
