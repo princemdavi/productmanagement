@@ -5,10 +5,6 @@ require("./dbconnect.php");
 
 session_start();
 
-if(!empty(@$_SESSION['name'] && @$_SESSION['managerId'])){
-    header("Location: dashboard");
-}
-
 
 if(isset($_POST['btn-login'])){
 

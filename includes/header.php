@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+
+    if(!empty(@$_SESSION['name'] && @$_SESSION['managerId'])){
+        header("Location: dashboard");
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
