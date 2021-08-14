@@ -3,8 +3,6 @@
 include("./includes/header.php");
 require("./dbconnect.php");
 
-session_start();
-
 
 if(isset($_POST['btn-login'])){
 
@@ -69,12 +67,12 @@ if(isset($_POST['btn-login'])){
 
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="" class="form-control" value="<?php echo htmlspecialchars(@$userName) ?>">
+            <input type="text" name="username" class="form-control" value="<?php echo htmlspecialchars(@$userName) ?>">
             <div class="error"><?php echo @$errors['username'] ?></div>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="" class="form-control">
+            <input type="password" name="password" class="form-control">
             <div class="error"><?php echo @$errors['password'] ?></div>
         </div>
 

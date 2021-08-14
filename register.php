@@ -3,8 +3,6 @@
 include("./includes/header.php");
 require_once("./dbconnect.php");
 
-session_start();
-
 
 if(isset($_POST['register'])){
 
@@ -87,17 +85,17 @@ if(isset($_POST['register'])){
 
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" id="" class="form-control" value="<?php echo htmlspecialchars(@$name) ?>">
+            <input type="text" name="name" class="form-control" value="<?php echo htmlspecialchars(@$name) ?>">
             <div class="error"><?php echo @$errors['name'] ?></div>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="" class="form-control" value="<?php echo htmlspecialchars(@$userName) ?>">
+            <input type="text" name="username" class="form-control" value="<?php echo htmlspecialchars(@$userName) ?>">
             <div class="error"><?php echo @$errors['username'] ?></div>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="" class="form-control">
+            <input type="password" name="password" class="form-control">
             <div class="error"><?php echo @$errors['password'] ?></div>
         </div>
 
