@@ -12,7 +12,7 @@ if(!empty(@$_SESSION['name'] && @$_SESSION['managerId'])){
 
 if(isset($_POST['btn-login'])){
 
-    $username = trim($_POST['username']);
+    $userName = trim($_POST['username']);
     $password = trim($_POST['password']);
 
 
@@ -20,7 +20,7 @@ if(isset($_POST['btn-login'])){
 
     $login_error = "";
 
-    if(empty($username)){
+    if(empty($userName)){
         $errors['username'] = "This field is required";
     }
     if(empty($password)){
@@ -31,7 +31,7 @@ if(isset($_POST['btn-login'])){
     if(!array_filter($errors)){
 
         $stmt = $pdo->prepare("SELECT * FROM managers WHERE username = :username");
-        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':username', $userName);
         $stmt->execute();
 
         if(!$stmt->rowCount() > 0){
@@ -69,7 +69,7 @@ if(isset($_POST['btn-login'])){
 
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="" class="form-control" value="<?php echo htmlspecialchars(@$username) ?>">
+            <input type="text" name="username" id="" class="form-control" value="<?php echo htmlspecialchars(@$userName) ?>">
         </div>
         <div class="form-group">
             <label for="password">Password</label>

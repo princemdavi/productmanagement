@@ -10,7 +10,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^api/users api/users.php
-RewriteRule ^api/products api/products.php
+RewriteRule ^api/products/([0-9]+) api/products.php?page=$1
 
 #remove php file extension from all php files
 
