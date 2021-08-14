@@ -120,22 +120,22 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
                                         <?php echo $no++; ?>
                                     </td>
                                     <td>
-                                        <?php echo $product['productName']; ?>
+                                        <?php echo htmlspecialchars($product['productName']); ?>
                                     </td>
                                     <td>
-                                        <?php echo $product['productQuantity']; ?>
+                                        <?php echo htmlspecialchars($product['productQuantity']); ?>
                                     </td>
                                     <td>
-                                        <?php echo $product['productPrice']; ?>
+                                        <?php echo htmlspecialchars($product['productPrice']); ?>
                                     </td>
                                     <td>
     
                                         <button 
     
-                                            data-product_id="<?php echo $product['id']; ?>" 
-                                            data-product_name="<?php echo $product['productName']; ?>" 
-                                            data-product_quantity="<?php echo $product['productQuantity']; ?>" 
-                                            data-product_price="<?php echo $product['productPrice']; ?>"
+                                            data-product_id="<?php echo htmlspecialchars($product['id']); ?>" 
+                                            data-product_name="<?php echo htmlspecialchars($product['productName']); ?>" 
+                                            data-product_quantity="<?php echo htmlspecialchars($product['productQuantity']); ?>" 
+                                            data-product_price="<?php echo htmlspecialchars($product['productPrice']); ?>"
                                             onclick="editProduct(this)" class="btn-edit">Edit
     
                                         </button>
@@ -143,7 +143,7 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
                                     </td>
                                     <td>
                                         <form action="" method="post" onsubmit="return deleteProduct()">
-                                            <button type="submit" value="<?php echo $product['id']; ?>" name="delete" >Delete</button>
+                                            <button type="submit" value="<?php echo htmlspecialchars($product['id']); ?>" name="delete" >Delete</button>
                                         </form>
                                     </td>
                                 </tr>

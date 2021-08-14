@@ -1,6 +1,6 @@
 <?php include("./includes/header.php") ?>
 
-    <div class="container">
+    <div class="container flex">
         <div class="content">
             <h1 class="header">Product management system by prince david</h1>
             <p>
