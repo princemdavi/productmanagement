@@ -227,11 +227,13 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
         function openEditProductForm(){
             const editFormWrapper = document.querySelector(".edit")
             editFormWrapper.removeAttribute("hidden")
+
         }
 
         function closeEditProductForm(){
             const editFormWrapper = document.querySelector(".edit")
             editFormWrapper.setAttribute("hidden","hidden")
+            window.scrollTo(0,0)
         }
 
         function openAddProductForm(){
@@ -240,11 +242,28 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
 
             const editFormWrapper = document.querySelector(".add")
             editFormWrapper.removeAttribute("hidden")
+
+            let height = document.documentElement.offsetHeight
+            let width = document.documentElement.offsetHeight
+
+            window.scrollTo(width,height)
+
         }
 
         function closeAddProductForm(){
             const editFormWrapper = document.querySelector(".add")
             editFormWrapper.setAttribute("hidden","hidden")
+
+            window.scrollTo(0,0)
+
+        }
+
+
+        function scrollToBottom(){
+            let height = document.documentElement.offsetHeight
+            let width = document.documentElement.offsetHeight
+
+            window.scrollTo(width,height)
         }
 
 
@@ -252,6 +271,8 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
 
             closeAddProductForm()
             openEditProductForm()
+
+            scrollToBottom()
 
             var pId = document.querySelector("#edit_product_form")[0]
             var pName = document.querySelector("#edit_product_form")[1]
