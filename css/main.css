@@ -34,6 +34,11 @@ p {
   font-size: .8rem;
 }
 
+.error-message {
+  color: #e40505;
+  margin-bottom: 1rem;
+}
+
 .container {
   width: 90%;
   max-width: 1250px;

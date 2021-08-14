@@ -50,7 +50,7 @@ if(isset($_POST['register'])){
 
     //! end of error handling 
 
-    $error = "";
+    $register_error = "";
 
     if(!array_filter($errors)){
         
@@ -59,7 +59,7 @@ if(isset($_POST['register'])){
         $select->execute();
 
         if($select->rowCount()){
-            $error = "Username is already in use";
+            $register_error = "Username is already in use";
         }else{
 
             $hashedPass = password_hash($password, PASSWORD_DEFAULT);
@@ -72,7 +72,7 @@ if(isset($_POST['register'])){
             if($insert->rowCount()){
                 header("Location: login");
             }else{
-                $error = "Something went wrong";
+                $register_error = "Something went wrong";
             }
         }
     }
@@ -87,6 +87,8 @@ if(isset($_POST['register'])){
         <div class="header">
             <h1>Register</h1>
         </div>
+
+        <div class="error-message"><?php echo @$register_error ?></div>
 
         <div class="form-group">
             <label for="name">Name</label>
@@ -105,7 +107,6 @@ if(isset($_POST['register'])){
         </div>
 
         <button type="submit" class="btn" name="register">Register</button>
-        <div><?php echo @$error ?></div>
     </form>
 </div>
 
