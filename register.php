@@ -75,7 +75,7 @@ if(isset($_POST['register'])){
 
     
 <div class="container-register">
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return sub()">
 
         <div class="header">
             <h1>Register</h1>
@@ -99,8 +99,12 @@ if(isset($_POST['register'])){
             <div class="error"><?php echo @$errors['password'] ?></div>
         </div>
 
-        <button type="submit" class="btn" name="register">Register</button>
+        <button type="submit" class="btn" name="register" onclick="openModel()">Register</button>
     </form>
+</div>
+
+<div class="modal__wrapper">
+    <div class="modal__content"></div>
 </div>
 
 <?php include("./includes/footer.php") ?>

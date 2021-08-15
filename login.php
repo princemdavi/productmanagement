@@ -76,9 +76,13 @@ if(isset($_POST['btn-login'])){
             <div class="error"><?php echo @$errors['password'] ?></div>
         </div>
 
-        <button type="submit" class="btn" name="btn-login">Login</button>
+        <button type="submit" class="btn" name="btn-login" onclick="openModel()">Login</button>
 
     </form>
+</div>
+
+<div class="modal__wrapper">
+    <div class="modal__content"></div>
 </div>
 
 <?php include("./includes/footer.php") ?>

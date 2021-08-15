@@ -93,7 +93,7 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
 <body>
         <header>
             <div class="container container-nav">
-                <h1>welcome <?php echo @$name ?></h1>
+                <h1>welcome <?php echo htmlspecialchars(@$name) ?></h1>
                 <button class="btn-logout" onclick="logout()">log out</button>
             </div>
         </header>
@@ -178,7 +178,7 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
                     </div>
     
                     <div class="buttons">
-                        <button type="submit" name="edit" class="btn-edit">Save</button> <button type="button" class="btn-edit btn-cancel" onclick="closeEditProductForm()">Cancel</button>
+                        <button type="submit" name="edit" class="btn-edit" onclick="openModel()">Save</button> <button type="button" class="btn-edit btn-cancel" onclick="closeEditProductForm()">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -200,16 +200,29 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
                         </div>
         
                         <div class="buttons">
-                            <button type="submit" name="add" class="btn-edit">Add</button> <button type="button" class="btn-edit btn-cancel" onclick="closeAddProductForm()">Cancel</button>
+                            <button type="submit" name="add" class="btn-edit" onclick="openModel()">Add</button> <button type="button" class="btn-edit btn-cancel" onclick="closeAddProductForm()">Cancel</button>
                         </div>
                     </form>
                 </div>
         </div>
 
+        <div class="modal__wrapper">
+            <div class="modal__content"></div>
+        </div>
 
     <script>
 
+        function openModel(){
+
+            document.querySelector(".modal__wrapper").style.opacity = "1"
+            document.querySelector(".modal__wrapper").style.zIndex = "999"
+
+        }
+
         function logout(){
+
+            openModel()
+
             window.location.assign("logout")
         }
 
@@ -217,6 +230,9 @@ if(isset($_POST['add']) && !empty($_POST['productName'] && $_POST['productQuanti
         function deleteProduct(){
 
             if(confirm("Are you sure you want to delete this product? ")){
+
+                openModel();
+                
                 return true
             }else{
                 return false

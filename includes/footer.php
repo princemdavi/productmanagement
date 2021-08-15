@@ -5,6 +5,13 @@
 </footer>
 <script>
 
+    function openModel(){
+
+        document.querySelector(".modal__wrapper").style.opacity = "1"
+        document.querySelector(".modal__wrapper").style.zIndex = "999"
+
+    }
+
     (function(){
 
 
